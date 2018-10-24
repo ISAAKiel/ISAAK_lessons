@@ -105,6 +105,22 @@ regexec(pattern, text, ignore.case = FALSE, perl = FALSE,
 
 - **regexpr** & **gregexpr** & **regexec**: Search a character vector for matches and return the indices of the string where the match begins and the length of the match. **gregexpr** returns result as a list object. **regexec** additionally returns the locations of any parenthesized sub-expressions. 
 
+## Pattern Matching and Replacement in base R (?grep)
+
+```{r, eval = FALSE}
+grep(pattern, x, ignore.case = FALSE, perl = FALSE, value = FALSE,
+     fixed = FALSE, useBytes = FALSE, invert = FALSE)
+```
+
+- **pattern**: Pattern to be matched. Can be regular expression or normal string (if **fixed** == TRUE).
+- **x**, **text**: Character vector where mathces are sought.
+- **ignore.case**: Should the pattern matching be case sensitive?
+- **perl**: Should Perl-compatible regexps be used?
+- **value**: Should indices or matching elements be returned?
+- **fixed**: Is the pattern a string to be matched as is?
+- **useBytes**: Should encoding problems be ignored?
+- **invert**: Should the result contain everything that does NOT match?
+
 # Example Code
 
 ## Get Data
