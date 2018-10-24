@@ -105,6 +105,53 @@ regexec(pattern, text, ignore.case = FALSE, perl = FALSE,
 
 - **regexpr** & **gregexpr** & **regexec**: Search a character vector for matches and return the indices of the string where the match begins and the length of the match. **gregexpr** returns result as a list object. **regexec** additionally returns the locations of any parenthesized sub-expressions. 
 
-## Examples
+# Example Code
 
+## Get Data
 
+```{r}
+library(magrittr)
+
+radon <- c14bazAAR::get_RADON()[,c("labnr", "shortref")] %>% 
+  tibble::as.tibble()
+```
+
+```{r, echo = FALSE}
+radon
+```
+
+## Search for "Breunig 1987"
+
+```{r}
+radon %>%
+  dplyr::filter(
+    shortref == "Breunig 1987"
+  )
+```
+
+## Search for "Breunig 1987"
+
+```{r}
+radon %>%
+  dplyr::filter(
+    grepl("Breunig 1987", .$shortref)
+  ) 
+```
+
+## Search for "Breunig 1987" from page 64-78 
+
+```{r}
+radon %>%
+  dplyr::filter(
+    grepl("Breunig 1987,?\\s+[64-78]", .$shortref)
+  ) 
+```
+
+## Search for "Breunig 1987" from page 64 without upper limit
+
+```{r}
+radon %>%
+  dplyr::filter(
+    grepl("Breunig 1987,?\\s+([6-9]|[1-9]{3,})", .$shortref)
+  ) 
+```
