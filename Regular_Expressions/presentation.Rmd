@@ -9,8 +9,20 @@ editor_options:
 fontsize: 9pt
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+## Motivation
+
+```{r}
+last_names <- c("Maier", "Meyer", "Tietze", "Mayr", "Rinne")
+```
+
+```{r, echo = FALSE}
+last_names
+```
+
+```{r}
+grep(pattern = "M[ae][iy]e?r", last_names)
+
+last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 ```
 
 ## Definition
@@ -20,8 +32,6 @@ knitr::opts_chunk$set(echo = FALSE)
   - POSIX: Basic Regular Syntax (BRE)
   - POSIX: Extended Regular Syntax (ERE) 
   - Perl regexes
-
-## Motivation
 
 ## Symbols
 
