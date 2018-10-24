@@ -56,4 +56,17 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 |{n,}|sign before {n,} minimum n times|
 |{,m}|sign before {,m} maximum n times|
 
+## Other Expressions
+
+|Expression|Meaning|
+|---|---|
+|$\widehat{}$|Start of the line|
+|$|End of line|
+|\\<|Start of word|
+|\\<|End of word|
+|(...)|Subexpression. Important for replacement commands|
+|\||Logical OR|
+|\\|Avoid special meaning of operators after \\|
+
+
 
