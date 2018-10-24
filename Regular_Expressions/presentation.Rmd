@@ -1,5 +1,5 @@
 ---
-title: "Regular Expressions"
+title: "Regular Expressions in R"
 subtitle: "ISAAK short lesson"
 date: 2018-10-24
 author: "Clemens Schmid"
@@ -24,6 +24,8 @@ grep(pattern = "M[ae][iy]e?r", last_names)
 
 last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 ```
+
+# Regular Expressions
 
 ## Definition
 
@@ -68,5 +70,41 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 |\||Logical OR|
 |\\|Avoid special meaning of operators after \\|
 
+# Regular Expressions in R
+
+## Pattern Matching and Replacement in base R (?grep)
+
+```{r, eval = FALSE}
+grep(pattern, x, ignore.case = FALSE, perl = FALSE, value = FALSE,
+     fixed = FALSE, useBytes = FALSE, invert = FALSE)
+
+grepl(pattern, x, ignore.case = FALSE, perl = FALSE,
+      fixed = FALSE, useBytes = FALSE)
+
+sub(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
+    fixed = FALSE, useBytes = FALSE)
+
+gsub(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
+     fixed = FALSE, useBytes = FALSE)
+
+regexpr(pattern, text, ignore.case = FALSE, perl = FALSE,
+        fixed = FALSE, useBytes = FALSE)
+
+gregexpr(pattern, text, ignore.case = FALSE, perl = FALSE,
+         fixed = FALSE, useBytes = FALSE)
+
+regexec(pattern, text, ignore.case = FALSE, perl = FALSE,
+        fixed = FALSE, useBytes = FALSE)
+```
+
+## Pattern Matching and Replacement in base R (?grep)
+
+- **grep** & **grepl**: Search a character vector and return the indices of the matching elements. **grep** returns a vector of the indices. **grepl** returns a logical vector (TRUE/FALSE).
+
+- **sub** & **gsub**: Replace. Search a character vector for regular expression matches and replace that match with another string. **sub** replaces the first occurrence of a pattern, **gsub** replaces all occurrences.
+
+- **regexpr** & **gregexpr** & **regexec**: Search a character vector for matches and return the indices of the string where the match begins and the length of the match. **gregexpr** returns result as a list object. **regexec** additionally returns the locations of any parenthesized sub-expressions. 
+
+## Examples
 
 
