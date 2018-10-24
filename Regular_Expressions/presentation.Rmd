@@ -27,7 +27,7 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 
 ## Definition
 
-- Regular Expressions are character sequences that define specific search patterns
+- Regular Expressions are sign sequences that define specific search patterns
 - Standards: 
   - POSIX: Basic Regular Syntax (BRE)
   - POSIX: Extended Regular Syntax (ERE) 
@@ -37,10 +37,23 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 
 |Expression|Meaning|Example|
 |---|---|---|
-|c|Individual characters|c|
-|.|One character, except linebreak|.|
-|[character]|One of these characters|[123ufg]|
-|[character1 - character2]|One character from this sequence|[0-9]|
-|[^character]|One character that is NOT one of these|[^a]|
-|[^character1 - character2]|One character NOT from this sequence|[^0-9]|
+|c|Individual signs|c|
+|.|One sign, except linebreak|.|
+|[sign]|One of these signs|[123ufg]|
+|[sign1 - sign2]|One sign from this sequence|[0-9]|
+|[^sign]|One sign that is NOT one of these|[^a]|
+|[^sign1 - sign2]|One sign NOT from this sequence|[^0-9]|
+
+## Quantifiers
+
+|Expression|Meaning|
+|---|---|
+|?|sign before ? zero times or once|
+|$\ast$|sign before $\ast$ zero times or or any number of times|
+|+|sign before + once or any number of times|
+|{n}|sign before {n} n times|
+|{n,m}|sign before {n,m} n to m times|
+|{n,}|sign before {n,} minimum n times|
+|{,m}|sign before {,m} maximum n times|
+
 
