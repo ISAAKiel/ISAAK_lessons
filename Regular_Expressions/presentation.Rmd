@@ -29,10 +29,11 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 
 ## Definition
 
-- Regular Expressions are sign sequences that define specific search patterns
+- Regular Expressions (Regex) are sign sequences that define specific search patterns
+- They are pretty much universal: Many programming languages provide functions to use them and many gui/cli text editors allow to use them. 
 - Standards: 
   - POSIX: Basic Regular Syntax (BRE)
-  - POSIX: Extended Regular Syntax (ERE) 
+  - **POSIX: Extended Regular Syntax (ERE)**
   - Perl regexes
 
 ## Symbols
@@ -44,7 +45,7 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 |[sign]|One of these signs|[123ufg]|
 |[sign1 - sign2]|One sign from this sequence|[0-9]|
 |[^sign]|One sign that is NOT one of these|[^a]|
-|[^sign1 - sign2]|One sign NOT from this sequence|[^0-9]|
+|[^sign1 - sign2]|One sign NOT from this sequence|[^B-T]|
 
 ## Quantifiers
 
@@ -72,7 +73,7 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 
 # Regular Expressions in R
 
-## Pattern Matching and Replacement in base R (?grep)
+## Pattern Matching and Replacement in Base R (?grep)
 
 ```{r, eval = FALSE}
 grep(pattern, x, ignore.case = FALSE, perl = FALSE, value = FALSE,
@@ -97,7 +98,7 @@ regexec(pattern, text, ignore.case = FALSE, perl = FALSE,
         fixed = FALSE, useBytes = FALSE)
 ```
 
-## Pattern Matching and Replacement in base R (?grep)
+## Pattern Matching and Replacement in Base R (?grep)
 
 - **grep** & **grepl**: Search a character vector and return the indices of the matching elements. **grep** returns a vector of the indices. **grepl** returns a logical vector (TRUE/FALSE).
 
@@ -105,7 +106,7 @@ regexec(pattern, text, ignore.case = FALSE, perl = FALSE,
 
 - **regexpr** & **gregexpr** & **regexec**: Search a character vector for matches and return the indices of the string where the match begins and the length of the match. **gregexpr** returns result as a list object. **regexec** additionally returns the locations of any parenthesized sub-expressions. 
 
-## Pattern Matching and Replacement in base R (?grep)
+## Pattern Matching and Replacement in Base R (?grep)
 
 ```{r, eval = FALSE}
 grep(pattern, x, ignore.case = FALSE, perl = FALSE, value = FALSE,
@@ -113,7 +114,7 @@ grep(pattern, x, ignore.case = FALSE, perl = FALSE, value = FALSE,
 ```
 
 - **pattern**: Pattern to be matched. Can be regular expression or normal string (if **fixed** == TRUE).
-- **x**, **text**: Character vector where mathces are sought.
+- **x**, **text**: Character vector where matches are sought.
 - **ignore.case**: Should the pattern matching be case sensitive?
 - **perl**: Should Perl-compatible regexps be used?
 - **value**: Should indices or matching elements be returned?
@@ -180,7 +181,7 @@ radon %>%
   - https://regexr.com
   - http://buildregex.com
   - https://regex101.com
-  - https://txt2re.com
+  - **https://txt2re.com**
 
 - Fan pages: 
   - https://www.rexegg.com
