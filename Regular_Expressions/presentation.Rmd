@@ -1,0 +1,36 @@
+---
+title: "Regular Expressions"
+subtitle: "ISAAK short lesson"
+date: 2018-10-24
+author: "Clemens Schmid"
+output: beamer_presentation
+editor_options: 
+  chunk_output_type: console
+fontsize: 9pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Definition
+
+- Regular Expressions are character sequences that define specific search patterns
+- Standards: 
+  - POSIX: Basic Regular Syntax (BRE)
+  - POSIX: Extended Regular Syntax (ERE) 
+  - Perl regexes
+
+## Motivation
+
+## Symbols
+
+|Expression|Meaning|Example|
+|---|---|---|
+|c|Individual characters|c|
+|.|One character, except linebreak|.|
+|[character]|One of these characters|[123ufg]|
+|[character1 - character2]|One character from this sequence|[0-9]|
+|[^character]|One character that is NOT one of these|[^a]|
+|[^character1 - character2]|One character NOT from this sequence|[^0-9]|
+
