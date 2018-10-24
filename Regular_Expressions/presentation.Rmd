@@ -65,8 +65,8 @@ last_names[grep(pattern = "M[ae][iy]e?r", last_names)]
 |$\widehat{}$|Start of the line|
 |$|End of line|
 |\\<|Start of word|
-|\\<|End of word|
-|(...)|Subexpression. Important for replacement commands|
+|\\>|End of word|
+|(...)|Definition of a subexpression|
 |\||Logical OR|
 |\\|Avoid special meaning of operators after \\|
 
@@ -155,3 +155,20 @@ radon %>%
     grepl("Breunig 1987,?\\s+([6-9]|[1-9]{3,})", .$shortref)
   ) 
 ```
+
+# Resources
+
+## Resources
+
+- Regex test and build environments: 
+  - https://regexr.com
+  - http://buildregex.com
+  - https://regex101.com
+  - https://txt2re.com
+
+- Fan pages: 
+  - https://www.rexegg.com
+  - https://www.regular-expressions.info
+
+- Short Introduction to Regex in R:
+  - https://bookdown.org/rdpeng/rprogdatascience/regular-expressions.html
