@@ -171,7 +171,7 @@ radon %>% dplyr::filter(grepl(paste0(
       "Breunig 1987,?\\s+",
       "([1-9]\\d{2,}|",     # + 1-9 + at least 2 more numbers
       "7[4-9]([^0-9]|$)|",  # or 7 + 4-9 + no number or EOL
-      "[7-9]\\d([^0-9]|$))" # or 7-9 + 0-9 + no number or EOL
+      "[8-9]\\d([^0-9]|$))" # or 7-9 + 0-9 + no number or EOL
     ), .$shortref)
   ) 
 ```
