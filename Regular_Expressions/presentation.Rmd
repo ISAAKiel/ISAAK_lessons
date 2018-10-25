@@ -140,8 +140,7 @@ radon
 ## Search for "Breunig 1987"
 
 ```{r}
-radon %>%
-  dplyr::filter(
+radon %>% dplyr::filter(
     shortref == "Breunig 1987"
   )
 ```
@@ -149,27 +148,31 @@ radon %>%
 ## Search for "Breunig 1987"
 
 ```{r}
-radon %>%
-  dplyr::filter(
+radon %>% dplyr::filter(
     grepl("Breunig 1987", .$shortref)
   ) 
 ```
 
-## Search for "Breunig 1987" from page 64-78 
+## Search for "Breunig 1987" from page 74-88 
 
 ```{r}
-radon %>%
-  dplyr::filter(
-    grepl("Breunig 1987,?\\s+[64-78]", .$shortref)
+radon %>% dplyr::filter(grepl(paste0(
+      "Breunig 1987,?\\s+", # + 0 or 1 "," + 1 or more " "
+      "(7[4-9]([^0-9]|$)|", # + 7 + 4-9 + no number or EOL
+      "8[0-8]([^0-9]|$))"   # or 8 + 0-8 + no number or EOL
+    ), .$shortref)
   ) 
 ```
 
-## Search for "Breunig 1987" from page 64 without upper limit
+## Search for "Breunig 1987" from page 74 without upper limit
 
 ```{r}
-radon %>%
-  dplyr::filter(
-    grepl("Breunig 1987,?\\s+([6-9]|[1-9]{3,})", .$shortref)
+radon %>% dplyr::filter(grepl(paste0(
+      "Breunig 1987,?\\s+",
+      "([1-9]\\d{2,}|",     # + 1-9 + at least 2 more numbers
+      "7[4-9]([^0-9]|$)|",  # or 7 + 4-9 + no number or EOL
+      "[7-9]\\d([^0-9]|$))" # or 7-9 + 0-9 + no number or EOL
+    ), .$shortref)
   ) 
 ```
 
